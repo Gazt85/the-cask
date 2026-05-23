@@ -9,7 +9,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-heading);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -39,6 +39,9 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-amber: var(--amber);
+  --color-amber-light: var(--amber-light);
+  --color-amber-dark: var(--amber-dark);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -48,73 +51,72 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* ============================================================
+   THE CASKET — Amber & Black whisky lounge theme
+   Dark by default. Warm amber accents on deep charcoal.
+   ============================================================ */
+
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* Surfaces */
+  --background: oklch(0.14 0.005 60);          /* Deep charcoal with warm undertone */
+  --foreground: oklch(0.92 0.01 75);            /* Warm cream text */
+  --card: oklch(0.18 0.006 60);                 /* Elevated dark surface */
+  --card-foreground: oklch(0.92 0.01 75);       /* Cream on cards */
+  --popover: oklch(0.20 0.008 60);              /* Popover surface */
+  --popover-foreground: oklch(0.92 0.01 75);
+
+  /* Primary — amber/gold */
+  --primary: oklch(0.75 0.14 75);               /* Rich amber */
+  --primary-foreground: oklch(0.13 0.005 60);   /* Near-black text on amber */
+
+  /* Secondary — muted dark surface */
+  --secondary: oklch(0.22 0.008 60);
+  --secondary-foreground: oklch(0.88 0.01 75);
+
+  /* Muted — subtle background */
+  --muted: oklch(0.20 0.006 60);
+  --muted-foreground: oklch(0.60 0.02 75);      /* Warm mid-gray */
+
+  /* Accent — golden highlight */
+  --accent: oklch(0.65 0.12 75);
+  --accent-foreground: oklch(0.13 0.005 60);
+
+  /* Destructive */
+  --destructive: oklch(0.60 0.20 25);
+
+  /* Borders & inputs */
+  --border: oklch(0.28 0.01 60);                /* Subtle warm border */
+  --input: oklch(0.25 0.01 60);
+  --ring: oklch(0.70 0.12 75);                  /* Amber focus ring */
+
+  /* Charts */
+  --chart-1: oklch(0.75 0.14 75);               /* Amber */
+  --chart-2: oklch(0.65 0.10 55);               /* Copper */
+  --chart-3: oklch(0.55 0.08 40);               /* Bronze */
+  --chart-4: oklch(0.45 0.06 60);               /* Dark gold */
+  --chart-5: oklch(0.35 0.04 60);               /* Deep bronze */
+
+  --radius: 0.5rem;
+
+  /* Sidebar */
+  --sidebar: oklch(0.12 0.005 60);
+  --sidebar-foreground: oklch(0.92 0.01 75);
+  --sidebar-primary: oklch(0.75 0.14 75);
+  --sidebar-primary-foreground: oklch(0.13 0.005 60);
+  --sidebar-accent: oklch(0.22 0.008 60);
+  --sidebar-accent-foreground: oklch(0.88 0.01 75);
+  --sidebar-border: oklch(0.28 0.01 60);
+  --sidebar-ring: oklch(0.70 0.12 75);
+
+  /* Custom amber utilities */
+  --amber: oklch(0.75 0.14 75);
+  --amber-light: oklch(0.82 0.12 75);
+  --amber-dark: oklch(0.60 0.14 75);
 }
 
+/* Dark mode is the default; light mode override if ever needed */
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Same as :root — the app is dark-first */
 }
 
 @layer base {
@@ -126,5 +128,20 @@
   }
   html {
     @apply font-sans;
+  }
+}
+
+/* Custom styles for the whisky lounge feel */
+@layer components {
+  /* Subtle gold glow on card hover */
+  [data-slot="card"]:hover {
+    box-shadow: 0 0 0 1px oklch(0.75 0.14 75 / 15%),
+                0 4px 20px oklch(0.75 0.14 75 / 8%);
+    transition: box-shadow 0.2s ease;
+  }
+
+  /* Refined separator with warm tint */
+  [data-slot="separator"] {
+    background-color: oklch(0.28 0.01 60);
   }
 }
