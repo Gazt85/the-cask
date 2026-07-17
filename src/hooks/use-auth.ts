@@ -38,11 +38,16 @@ export function useAuth() {
     [auth]
   );
 
+  const signInWithGoogle = useCallback(async () => {
+    const redirectTo = `${window.location.origin}/auth/callback`;
+    return auth.signInWithGoogle(redirectTo);
+  }, [auth]);
+
   const signOut = useCallback(async () => {
     await auth.signOut();
     setUser(null);
     router.push("/");
   }, [auth, router]);
 
-  return { user, loading, signIn, signUp, signOut };
+  return { user, loading, signIn, signUp, signInWithGoogle, signOut };
 }

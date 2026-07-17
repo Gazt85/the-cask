@@ -42,10 +42,15 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     'auth.email_placeholder': 'vos@example.com',
     'auth.password': 'Contraseña',
     'auth.password_placeholder': '••••••••',
+    'auth.show_password': 'Mostrar contraseña',
+    'auth.hide_password': 'Ocultar contraseña',
     'auth.loading': 'Cargando...',
     'auth.no_account': '¿No tenés cuenta?',
     'auth.have_account': '¿Ya tenés cuenta?',
     'auth.check_email': 'Revisá tu email para confirmar tu cuenta.',
+    'auth.continue_with_google': 'Continuar con Google',
+    'auth.or_continue_with': 'O continuá con',
+    'auth.oauth_error': 'No pudimos completar el inicio de sesión. Probá de nuevo.',
 
     // ── Nav ────────────────────────────────────────────────
     'nav.cabinet': 'Gabinete',
@@ -129,6 +134,7 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     'add_bottle.notes_placeholder': 'Dónde la compraste, regalo de...',
     'add_bottle.cancel': 'Cancelar',
     'add_bottle.submit': 'Agregar al Gabinete',
+    'add_bottle.submit_and_keep_adding': 'Agregar y seguir agregando',
     'add_bottle.submitting': 'Agregando...',
 
     // ── Dashboard ──────────────────────────────────────────
@@ -241,10 +247,15 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     'auth.email_placeholder': 'you@example.com',
     'auth.password': 'Password',
     'auth.password_placeholder': '••••••••',
+    'auth.show_password': 'Show password',
+    'auth.hide_password': 'Hide password',
     'auth.loading': 'Loading...',
     'auth.no_account': "Don't have an account?",
     'auth.have_account': 'Already have an account?',
     'auth.check_email': 'Check your email to confirm your account.',
+    'auth.continue_with_google': 'Continue with Google',
+    'auth.or_continue_with': 'Or continue with',
+    'auth.oauth_error': "We couldn't complete sign-in. Please try again.",
     'nav.cabinet': 'Cabinet',
     'nav.add_whisky': 'Add Whisky',
     'nav.dashboard': 'Dashboard',
@@ -312,6 +323,7 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     'add_bottle.notes_placeholder': 'Where you bought it, gift from...',
     'add_bottle.cancel': 'Cancel',
     'add_bottle.submit': 'Add to Cabinet',
+    'add_bottle.submit_and_keep_adding': 'Add and keep adding',
     'add_bottle.submitting': 'Adding...',
     'dashboard.title': 'Dashboard',
     'dashboard.welcome': 'Welcome back',
@@ -420,10 +432,15 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     'auth.email_placeholder': 'voce@example.com',
     'auth.password': 'Senha',
     'auth.password_placeholder': '••••••••',
+    'auth.show_password': 'Mostrar senha',
+    'auth.hide_password': 'Ocultar senha',
     'auth.loading': 'Carregando...',
     'auth.no_account': 'Não tem conta?',
     'auth.have_account': 'Já tem conta?',
     'auth.check_email': 'Verifique seu email para confirmar sua conta.',
+    'auth.continue_with_google': 'Continuar com Google',
+    'auth.or_continue_with': 'Ou continue com',
+    'auth.oauth_error': 'Não foi possível concluir o login. Tente novamente.',
 
     // ── Nav ────────────────────────────────────────────────
     'nav.cabinet': 'Adega',
@@ -507,6 +524,7 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     'add_bottle.notes_placeholder': 'Onde você comprou, presente de...',
     'add_bottle.cancel': 'Cancelar',
     'add_bottle.submit': 'Adicionar à Adega',
+    'add_bottle.submit_and_keep_adding': 'Adicionar e continuar adicionando',
     'add_bottle.submitting': 'Adicionando...',
 
     // ── Dashboard ──────────────────────────────────────────

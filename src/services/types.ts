@@ -11,6 +11,7 @@ import type { ApiResponse, Profile, User } from "@/types";
 export interface AuthService {
   signUp(email: string, password: string): Promise<ApiResponse<User>>;
   signIn(email: string, password: string): Promise<ApiResponse<User>>;
+  signInWithGoogle(redirectTo: string): Promise<ApiResponse<null>>;
   signOut(): Promise<ApiResponse<null>>;
   getSession(): Promise<ApiResponse<User>>;
   resetPassword(email: string): Promise<ApiResponse<null>>;
