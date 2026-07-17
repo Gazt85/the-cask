@@ -39,7 +39,14 @@ export function AddBottleDialog({
 
   if (!whisky) return null
 
-  async function handleSubmit() {
+  function resetForm() {
+    setStatus('sealed')
+    setQuantity(1)
+    setPricePaid('')
+    setNotes('')
+  }
+
+  async function handleSubmit(keepAdding: boolean) {
     if (!whisky) return
     setSubmitting(true)
 
@@ -59,6 +66,13 @@ export function AddBottleDialog({
     }
 
     toast.success(`${whisky.name} ${t('toast.bottle_added')}`)
+
+    if (keepAdding) {
+      resetForm()
+      onOpenChange(false)
+      return
+    }
+
     onOpenChange(false)
     router.push('/cabinet')
   }
@@ -134,7 +148,16 @@ export function AddBottleDialog({
           >
             {t('add_bottle.cancel')}
           </Button>
-          <Button onClick={handleSubmit} disabled={submitting}>
+          <Button
+            variant="outline"
+            onClick={() => handleSubmit(true)}
+            disabled={submitting}
+          >
+            {submitting
+              ? t('add_bottle.submitting')
+              : t('add_bottle.submit_and_keep_adding')}
+          </Button>
+          <Button onClick={() => handleSubmit(false)} disabled={submitting}>
             {submitting ? t('add_bottle.submitting') : t('add_bottle.submit')}
           </Button>
         </DialogFooter>

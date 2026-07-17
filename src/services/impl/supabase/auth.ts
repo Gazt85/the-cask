@@ -59,6 +59,19 @@ export class SupabaseAuthService implements AuthService {
     };
   }
 
+  async signInWithGoogle(redirectTo: string): Promise<ApiResponse<null>> {
+    const { error } = await this.supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo },
+    });
+
+    if (error) {
+      return { data: null, error: { message: error.message, code: error.code } };
+    }
+
+    return { data: null, error: null };
+  }
+
   async signOut(): Promise<ApiResponse<null>> {
     const { error } = await this.supabase.auth.signOut();
     if (error) {
