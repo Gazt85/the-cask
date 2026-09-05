@@ -1,7 +1,9 @@
 "use client";
 
+import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useAuth } from "@/hooks/use-auth";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -17,7 +19,9 @@ import { LocaleSwitcher } from "./locale-switcher";
 
 export function Navbar() {
   const t = useT();
+  const pathname = usePathname();
   const { user, loading, signOut } = useAuth();
+  const [dropdownOpen, setDropdownOpen] = React.useState(false);
 
   const initials = user?.full_name
     ? user.full_name
@@ -54,7 +58,7 @@ export function Navbar() {
               <Button variant="ghost" size="sm" className="hidden sm:inline-flex" render={<Link href="/search" />}>
                 {t('nav.add_whisky')}
               </Button>
-              <DropdownMenu>
+              <DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
                 <DropdownMenuTrigger className="relative h-8 w-8 rounded-full cursor-pointer">
                   <Avatar className="h-8 w-8 border border-amber/30">
                     <AvatarFallback className="bg-amber/10 text-amber text-xs">
@@ -68,20 +72,23 @@ export function Navbar() {
                     <p className="text-xs text-muted-foreground">{user.email}</p>
                   </div>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem>
+                  <DropdownMenuItem className={pathname === '/cabinet' ? 'bg-accent text-accent-foreground' : ''} onClick={() => setDropdownOpen(false)}>
                     <Link href="/cabinet">{t('nav.cabinet')}</Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem>
+                  <DropdownMenuItem className={pathname === '/dashboard' ? 'bg-accent text-accent-foreground' : ''} onClick={() => setDropdownOpen(false)}>
                     <Link href="/dashboard">{t('nav.dashboard')}</Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem>
+                  <DropdownMenuItem className={pathname === '/guide' ? 'bg-accent text-accent-foreground' : ''} onClick={() => setDropdownOpen(false)}>
                     <Link href="/guide">{t('nav.guide')}</Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem>
+                  <DropdownMenuItem className={pathname === '/settings' ? 'bg-accent text-accent-foreground' : ''} onClick={() => setDropdownOpen(false)}>
                     <Link href="/settings">{t('nav.settings')}</Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={() => signOut()}>
+                  <DropdownMenuItem onClick={() => {
+                    signOut();
+                    setDropdownOpen(false);
+                  }}>
                     {t('auth.signout')}
                   </DropdownMenuItem>
                 </DropdownMenuContent>
